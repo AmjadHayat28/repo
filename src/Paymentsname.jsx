@@ -47,8 +47,9 @@ const Paymentsname = () => {
             onClick={handleRecipientClick}
           />
           <Recipient
-            name="HAZRATULLAH"
-            bank="Mobilink Microfinance Bank (MMBL) *8212"
+            name="REHMAT SHAH"
+            bank="Telenor
+            Microfinance Bank (TMB) *6734"
             onClick={handleRecipientClick}
           />
           <Recipient
