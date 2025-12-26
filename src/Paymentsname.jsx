@@ -7,7 +7,9 @@ const Paymentsname = () => {
   const { amount, frozenTime } = state || { amount: "0", frozenTime: "N/A" };
 
   const handleRecipientClick = (name, bank) => {
-    navigate("/payment-receipt", { state: { recipientName: name, recipientBank: bank, amount, frozenTime } });
+    navigate("/payment-receipt", {
+      state: { recipientName: name, recipientBank: bank, amount, frozenTime },
+    });
   };
 
   return (
@@ -38,7 +40,7 @@ const Paymentsname = () => {
           />
           <Recipient
             name="ABDUL RASHID"
-            bank="HEL*8303"
+            bank="HBL*8303"
             onClick={handleRecipientClick}
           />
           <Recipient
@@ -48,18 +50,47 @@ const Paymentsname = () => {
           />
           <Recipient
             name="REHMAT SHAH"
-            bank="Telenor
-            Microfinance Bank (TMB) *6734"
+            bank="Telenor Microfinance Bank (TMB) *6734"
             onClick={handleRecipientClick}
           />
           <Recipient
-            name="Akhtar lqbal"
-            bank="NayaPay*6669"
+            name="ABDUL RASHEED"
+            bank="United Bank Limited (UBL) *9981"
             onClick={handleRecipientClick}
           />
           <Recipient
-            name="MUHAMMAD UMAR FAROOQ"
-            bank="Telenor Microfinance Bank (TMB) *7786"
+            name="ABDUL RASHEED"
+            bank="Telenor Microfinance Bank (TMB) *4530"
+            onClick={handleRecipientClick}
+          />
+          <Recipient
+            name="CAFE GARDEN COLD CORNER"
+            bank="Meezan Bank (MBL) *1376"
+            onClick={handleRecipientClick}
+          />
+          <Recipient
+            name="MUEIN UL DIN"
+            bank="Mobilink Microfinance Bank (MMBL) *0479"
+            onClick={handleRecipientClick}
+          />
+          <Recipient
+            name="ABDUR RASHEED"
+            bank="Mobilink Microfinance Bank (MMBL) *5426"
+            onClick={handleRecipientClick}
+          />
+          <Recipient
+            name="MOEEM UDDIN"
+            bank="Telenor Microfinance Bank (TMB) *3863"
+            onClick={handleRecipientClick}
+          />
+          <Recipient
+            name="Quatta Chay Khana 2"
+            bank="Mobilink Microfinance Bank (MMBL) *8328"
+            onClick={handleRecipientClick}
+          />
+          <Recipient
+            name="MUHAMMAD AA"
+            bank="HBL *1503"
             onClick={handleRecipientClick}
           />
         </div>
