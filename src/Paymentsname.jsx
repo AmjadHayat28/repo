@@ -89,8 +89,8 @@ const Paymentsname = () => {
             onClick={handleRecipientClick}
           />
           <Recipient
-            name="MUHAMMAD AA"
-            bank="HBL *1503"
+            name="ABDUL RASHEED"
+            bank="HBL *9601"
             onClick={handleRecipientClick}
           />
         </div>
