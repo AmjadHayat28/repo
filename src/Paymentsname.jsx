@@ -14,7 +14,6 @@ const Paymentsname = () => {
   const handleRecipientClick = (name, bank) => {
     setLoading(true);
 
-    // 6 second delay
     setTimeout(() => {
       navigate("/payment-receipt", {
         state: {
@@ -28,35 +27,54 @@ const Paymentsname = () => {
   };
 
   return (
-    <div className="p-4 bg-gray-100 min-h-screen relative">
-      
-      {/* 🔥 Loader Overlay (FIXED CENTERED) */}
+    <div className="bg-gray-100 min-h-screen relative">
+
+      {/* Loader */}
       {loading && (
         <div className="fixed inset-0 bg-white bg-opacity-80 flex items-center justify-center z-50">
           <div className="w-12 h-12 border-4 border-[#f77e68] border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
 
-      <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-lg font-semibold text-gray-700 mb-4">Get help</h2> 
-        <h2 className="text-lg font-semibold text-gray-700 mb-4">Send money</h2> 
+      <div className="max-w-md mx-auto bg-white min-h-screen p-5">
 
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Enter IBAN, Raast ID, account or name
-          </label> 
-          <input
-            type="text"
-            className="w-full p-2 border border-gray-300 rounded-md"
-            placeholder="PK19SADA00000311XXXXXXX"
-          /> 
+        {/* Top Bar */}
+        <div className="flex justify-between items-center mb-6">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-xl font-semibold"
+          >
+            ←
+          </button>
+          <p className="text-[#f77e68] font-medium cursor-pointer">
+            Get help
+          </p>
         </div>
 
-        <h2 className="text-lg font-semibold text-gray-700 mb-4">
+        {/* Main Title */}
+        <h1 className="text-3xl font-bold text-gray-800 mb-6">
           Send money
-        </h2>
+        </h1>
 
-        <div className="space-y-4">
+        {/* IBAN Input */}
+        <div className="mb-8">
+          <p className="text-sm text-gray-500 mb-3">
+            Enter IBAN, Raast ID, account or name
+          </p>
+          <input
+            type="text"
+            placeholder="PK19SADA00000311XXXXXXX"
+            className="w-full px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#f77e68]"
+          />
+        </div>
+
+        {/* Recipients Label */}
+        <p className="text-sm font-semibold text-gray-400 tracking-wider mb-4">
+          RECIPIENTS
+        </p>
+
+        {/* Recipients List */}
+        <div className="space-y-5">
           <Recipient name="MUHAMMAD JAVAID" bank="Telenor Microfinance Bank (TMB) *9918" onClick={handleRecipientClick} />
           <Recipient name="MUHAMMAD ASIF" bank="Telenor Microfinance Bank (TMB) *5885" onClick={handleRecipientClick} />
           <Recipient name="ABDUL RASHID" bank="HBL *8303" onClick={handleRecipientClick} />
@@ -69,7 +87,7 @@ const Paymentsname = () => {
           <Recipient name="ABDUR RASHEED" bank="Mobilink Microfinance Bank (MMBL) *5426" onClick={handleRecipientClick} />
           <Recipient name="MOEEM UDDIN" bank="Telenor Microfinance Bank (TMB) *3863" onClick={handleRecipientClick} />
           <Recipient name="Quatta Chay Khana 2" bank="Mobilink Microfinance Bank (MMBL) *8328" onClick={handleRecipientClick} />
-          <Recipient name="ABDUR RASHEED" bank="HBL *9601" onClick={handleRecipientClick} />
+          <Recipient name="MUHAMMAD AA" bank="HBL *1503" onClick={handleRecipientClick} />
         </div>
       </div>
     </div>
@@ -78,20 +96,26 @@ const Paymentsname = () => {
 
 const Recipient = ({ name, bank, onClick }) => {
   return (
-    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-      <div>
-        <p className="text-sm font-medium text-gray-700">{name}</p>
-        <p className="text-xs text-gray-500">{bank}</p>
+    <div
+      onClick={() => onClick(name, bank)}
+      className="flex items-center space-x-4 cursor-pointer"
+    >
+      {/* Circle Avatar */}
+      <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-semibold">
+        {name.charAt(0)}
       </div>
-      <button
-        className="text-sm text-blue-600 hover:text-blue-800"
-        onClick={() => onClick(name, bank)}
-      >
-        Send
-      </button>
+
+      {/* Name & Bank */}
+      <div>
+        <p className="text-base font-semibold text-gray-800">
+          {name}
+        </p>
+        <p className="text-sm text-gray-500">
+          {bank}
+        </p>
+      </div>
     </div>
   );
 };
 
 export default Paymentsname;
-
