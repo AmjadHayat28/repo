@@ -69,7 +69,7 @@ const Paymentsname = () => {
           <Recipient name="ABDUR RASHEED" bank="Mobilink Microfinance Bank (MMBL) *5426" onClick={handleRecipientClick} />
           <Recipient name="MOEEM UDDIN" bank="Telenor Microfinance Bank (TMB) *3863" onClick={handleRecipientClick} />
           <Recipient name="Quatta Chay Khana 2" bank="Mobilink Microfinance Bank (MMBL) *8328" onClick={handleRecipientClick} />
-          <Recipient name="MUHAMMAD AA" bank="HBL *1503" onClick={handleRecipientClick} />
+          <Recipient name="ABDUR RASHEED" bank="HBL *9601" onClick={handleRecipientClick} />
         </div>
       </div>
     </div>
@@ -94,3 +94,4 @@ const Recipient = ({ name, bank, onClick }) => {
 };
 
 export default Paymentsname;
+
