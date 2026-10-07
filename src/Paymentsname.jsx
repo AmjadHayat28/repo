@@ -77,6 +77,7 @@ const Paymentsname = () => {
         <div className="space-y-5">
           <Recipient name="MUHAMMAD JAVAID" bank="Telenor Microfinance Bank (TMB) *9918" onClick={handleRecipientClick} />
           <Recipient name="SAEED KHAN" bank="United Bank Limited (UBL) *4835" onClick={handleRecipientClick} />
+          <Recipient name="NAZEER AHMED" bank="Easypaisa Bank *1838" onClick={handleRecipientClick} />
            <Recipient name="SHAH RUKH IMTIAZ" bank="Telenor Microfinance Bank (TMB) *6226" onClick={handleRecipientClick} />
           <Recipient name="HAQ NAWAZ" bank="Telenor Microfinance Bank (TMB) *2617" onClick={handleRecipientClick} />
           <Recipient name="MUHAMMAD UMAR FAROOQ" bank="Easypaisa Bank *7786" onClick={handleRecipientClick} />
